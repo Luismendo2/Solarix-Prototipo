@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos - Solarix</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú Hamburguesa -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Solarix</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="modulos.html" class="nav-link active">Módulos</a>
+                <a href="#" class="nav-link">Simuladores</a>
+                <a href="cuestionario.html" class="nav-link">Evaluación</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de Módulos -->
+    <section class="modules-header">
+        <div class="container">
+            <h2>Módulos de Aprendizaje</h2>
+            <p>Selecciona un módulo para comenzar tu aprendizaje sobre energía solar</p>
+        </div>
+    </section>
+
+    <!-- Grid de Módulos -->
+    <section class="modules-grid">
+        <div class="container">
+            <div class="module-card">
+                <div class="module-icon">1</div>
+                <h3>Introducción a la Energía Solar</h3>
+                <p>Conceptos básicos, funcionamiento y aplicaciones de la energía solar</p>
+                <a href="modulo1.html" class="module-button">Explorar Módulo</a>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-icon">2</div>
+                <h3>Tecnologías Solares</h3>
+                <p>Tipos de tecnologías solares y sus características</p>
+                <a href="modulo2.html" class="module-button">Explorar Módulo</a>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-icon">3</div>
+                <h3>Instalación y Mantenimiento</h3>
+                <p>Procesos de instalación y mantenimiento de sistemas solares</p>
+                <a href="modulo3.html" class="module-button">Explorar Módulo</a>
+            </div>
+            
+            <div class="module-card">
+                <div class="module-icon">4</div>
+                <h3>Energía Solar en Colombia</h3>
+                <p>Contexto nacional, proyectos destacados y desafíos</p>
+                <a href="modulo4.html" class="module-button">Explorar Módulo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Solarix - Sistema Multimedia para la Educación sobre Energía Solar en la UAO</p>
+            <p>Proyecto desarrollado por el equipo de Diseño Multimedia 2</p>
+        </div>
+    </footer>
+    <!-- Icono para activar configuraciones -->
+<button id="settingsToggle" class="settings-toggle">⚙️</button>
+
+<!-- Panel de Configuraciones -->
+<div id="settingsPanel" class="settings-panel">
+    <h3>Configuración de Visualización</h3>
+    
+    <!-- Selector de Tema -->
+    <div class="setting-group">
+        <label for="themeSelect">Tema de la página:</label>
+        <select id="themeSelect">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+        </select>
+    </div>
+    
+    <!-- Control deslizante para Tamaño de Fuente -->
+    <div class="setting-group">
+        <label for="fontSizeSlider">Tamaño de fuente:</label>
+        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+        <span id="fontSizeValue">16px</span>
+    </div>
+    
+     <div class="settings-actions">
+            <button id="applySettings" class="nav-button primary">Aplicar</button>
+            <button id="closeSettings" class="nav-button secondary">Cerrar</button>
+        </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

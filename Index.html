@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarix - Educación sobre Energía Solar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú Hamburguesa -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Solarix</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="modulos.html" class="nav-link">Módulos</a>
+                <a href="#" class="nav-link">Simuladores</a>
+                <a href="cuestionario.html" class="nav-link">Evaluación</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Sistema Multimedia para la Educación sobre Energía Solar</h2>
+            <p>Explora, aprende y experimenta con la energía del futuro</p>
+            <a href="modulos.html" class="cta-button">Comenzar Aprendizaje</a>
+        </div>
+        <div class="hero-image">
+            <!-- Espacio para imagen/video hero -->
+            <div class="placeholder-hero">Imagen/Video Hero</div>
+        </div>
+    </section>
+
+    <!-- Sección de Introducción -->
+    <section class="intro-section">
+        <div class="container">
+            <h2>¿Qué es Solarix?</h2>
+            <p>Solarix es un sistema multimedia interactivo diseñado para educar sobre energía solar de manera accesible y práctica. Combina contenido teórico con simulaciones y un prototipo físico para ofrecer una experiencia de aprendizaje completa.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Contenido Multimedia</h3>
+                    <p>Videos, infografías y modelos 3D interactivos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Simulaciones</h3>
+                    <p>Calculadoras y estimadores de energía solar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌎</div>
+                    <h3>Contexto Colombiano</h3>
+                    <p>Información específica sobre energía solar en Colombia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Solarix - Sistema Multimedia para la Educación sobre Energía Solar en la UAO</p>
+            <p>Proyecto desarrollado por el equipo de Diseño Multimedia 2</p>
+        </div>
+    </footer>
+
+    <!-- Icono para activar configuraciones -->
+<button id="settingsToggle" class="settings-toggle">⚙️</button>
+
+<!-- Panel de Configuraciones -->
+<div id="settingsPanel" class="settings-panel">
+    <h3>Configuración de Visualización</h3>
+    
+    <!-- Selector de Tema -->
+    <div class="setting-group">
+        <label for="themeSelect">Tema de la página:</label>
+        <select id="themeSelect">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+        </select>
+    </div>
+    
+    <!-- Control deslizante para Tamaño de Fuente -->
+    <div class="setting-group">
+        <label for="fontSizeSlider">Tamaño de fuente:</label>
+        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+        <span id="fontSizeValue">16px</span>
+    </div>
+    
+     <div class="settings-actions">
+            <button id="applySettings" class="nav-button primary">Aplicar</button>
+            <button id="closeSettings" class="nav-button secondary">Cerrar</button>
+        </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

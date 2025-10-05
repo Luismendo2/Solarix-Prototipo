@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Evaluativo - Solarix</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú Hamburguesa -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Solarix</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="modulos.html" class="nav-link">Módulos</a>
+                <a href="#" class="nav-link">Simuladores</a>
+                <a href="cuestionario.html" class="nav-link active">Evaluación</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado del Cuestionario -->
+    <section class="module-header">
+        <div class="container">
+            <a href="modulos.html" class="back-button">← Volver a Módulos</a>
+            <h2>Cuestionario Evaluativo</h2>
+            <p>Evalúa tus conocimientos sobre energía solar respondiendo las siguientes preguntas.</p>
+            <div class="quiz-info">
+                <div class="info-item">
+                    <span class="info-label">Total de preguntas:</span>
+                    <span class="info-value" id="totalQuestions">10</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Tiempo estimado:</span>
+                    <span class="info-value">15 minutos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenedor del Cuestionario -->
+    <section class="quiz-container">
+        <div class="container">
+            <!-- Progreso del cuestionario -->
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress" id="quizProgress" style="width: 0%"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentQuestion">0</span> de <span id="totalQuestionsDisplay">10</span> preguntas
+                </div>
+            </div>
+
+            <!-- Preguntas del cuestionario -->
+            <form id="quizForm">
+                <!-- Pregunta 1 -->
+                <div class="question-card active" id="question1">
+                    <div class="question-header">
+                        <h3>Pregunta 1</h3>
+                        <span class="question-type">Verdadero/Falso</span>
+                    </div>
+                    <div class="question-content">
+                        <p>La energía solar fotovoltaica convierte directamente la luz del sol en electricidad.</p>
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="radio" name="q1" value="true">
+                                <span class="option-text">Verdadero</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="false">
+                                <span class="option-text">Falso</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question-feedback" id="feedback1" style="display: none;">
+                        <div class="feedback-correct">
+                            <h4>¡Correcto!</h4>
+                            <p>La energía solar fotovoltaica sí convierte directamente la luz solar en electricidad mediante el efecto fotovoltaico en las celdas solares.</p>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <button type="button" class="submit-btn" onclick="checkAnswer(1)">Verificar Respuesta</button>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question-card" id="question2">
+                    <div class="question-header">
+                        <h3>Pregunta 2</h3>
+                        <span class="question-type">Selección Múltiple</span>
+                    </div>
+                    <div class="question-content">
+                        <p>¿Cuáles de las siguientes son tecnologías solares?</p>
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="a">
+                                <span class="option-text">Energía solar fotovoltaica</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="b">
+                                <span class="option-text">Energía solar térmica</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="c">
+                                <span class="option-text">Energía eólica</span>
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q2" value="d">
+                                <span class="option-text">Energía solar de concentración</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question-feedback" id="feedback2" style="display: none;">
+                        <div class="feedback-correct">
+                            <h4>¡Correcto!</h4>
+                            <p>Las tecnologías solares incluyen la energía solar fotovoltaica, térmica y de concentración. La energía eólica no es una tecnología solar.</p>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <button type="button" class="submit-btn" onclick="checkAnswer(2)">Verificar Respuesta</button>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question-card" id="question3">
+                    <div class="question-header">
+                        <h3>Pregunta 3</h3>
+                        <span class="question-type">Selección Única</span>
+                    </div>
+                    <div class="question-content">
+                        <p>¿Cuál es el principal beneficio de la energía solar?</p>
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                <span class="option-text">Es la fuente de energía más barata</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                <span class="option-text">Es renovable y no contaminante</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                <span class="option-text">Funciona durante la noche</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="d">
+                                <span class="option-text">No requiere mantenimiento</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question-feedback" id="feedback3" style="display: none;">
+                        <div class="feedback-correct">
+                            <h4>¡Correcto!</h4>
+                            <p>El principal beneficio de la energía solar es que es renovable y no contaminante, lo que ayuda a combatir el cambio climático.</p>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <button type="button" class="submit-btn" onclick="checkAnswer(3)">Verificar Respuesta</button>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question-card" id="question4">
+                    <div class="question-header">
+                        <h3>Pregunta 4</h3>
+                        <span class="question-type">Verdadero/Falso</span>
+                    </div>
+                    <div class="question-content">
+                        <p>Los paneles solares no funcionan en días nublados.</p>
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="radio" name="q4" value="true">
+                                <span class="option-text">Verdadero</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="false">
+                                <span class="option-text">Falso</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question-feedback" id="feedback4" style="display: none;">
+                        <div class="feedback-correct">
+                            <h4>¡Correcto!</h4>
+                            <p>Los paneles solares sí funcionan en días nublados, aunque con menor eficiencia. Pueden generar electricidad con luz difusa.</p>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <button type="button" class="submit-btn" onclick="checkAnswer(4)">Verificar Respuesta</button>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="question-card" id="question5">
+                    <div class="question-header">
+                        <h3>Pregunta 5</h3>
+                        <span class="question-type">Selección Única</span>
+                    </div>
+                    <div class="question-content">
+                        <p>¿Qué región de Colombia tiene mayor potencial para energía solar?</p>
+                        <div class="options-container">
+                            <label class="option">
+                                <input type="radio" name="q5" value="a">
+                                <span class="option-text">Región Andina</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="b">
+                                <span class="option-text">Región Caribe</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="c">
+                                <span class="option-text">Región Amazónica</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="d">
+                                <span class="option-text">Región Pacífica</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question-feedback" id="feedback5" style="display: none;">
+                        <div class="feedback-correct">
+                            <h4>¡Correcto!</h4>
+                            <p>La región Caribe tiene mayor potencial solar debido a sus altos niveles de radiación solar durante todo el año.</p>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <button type="button" class="submit-btn" onclick="checkAnswer(5)">Verificar Respuesta</button>
+                    </div>
+                </div>
+
+                <!-- Más preguntas seguirían aquí... -->
+
+                <!-- Navegación del cuestionario -->
+                <div class="quiz-navigation">
+                    <button type="button" class="nav-button secondary" id="prevBtn" onclick="previousQuestion()" disabled>← Anterior</button>
+                    <button type="button" class="nav-button primary" id="nextBtn" onclick="nextQuestion()" disabled>Siguiente →</button>
+                    <button type="button" class="nav-button success" id="finishBtn" onclick="finishQuiz()" style="display: none;">Finalizar Cuestionario</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de Resultados -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Resultados del Cuestionario</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="score-container">
+                    <div class="score-circle">
+                        <span id="finalScore">0</span>
+                        <span class="score-label">/ 10</span>
+                    </div>
+                    <h3 id="scoreMessage">¡Buen trabajo!</h3>
+                    <p id="scoreDescription">Has completado el cuestionario sobre energía solar.</p>
+                </div>
+                <div class="results-breakdown">
+                    <h4>Desglose de resultados:</h4>
+                    <div class="breakdown-list" id="breakdownList">
+                        <!-- Se llenará dinámicamente con JavaScript -->
+                    </div>
+                </div>
+                <div class="results-actions">
+    <button class="nav-button secondary" onclick="reviewAnswers()">Revisar Respuestas</button>
+    <button class="nav-button primary" onclick="retakeQuiz()">Realizar Otro Intento</button>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Solarix - Sistema Multimedia para la Educación sobre Energía Solar en la UAO</p>
+            <p>Proyecto desarrollado por el equipo de Diseño Multimedia 2</p>
+        </div>
+    </footer>
+    <!-- Icono para activar configuraciones -->
+<button id="settingsToggle" class="settings-toggle">⚙️</button>
+
+<!-- Panel de Configuraciones -->
+<div id="settingsPanel" class="settings-panel">
+    <h3>Configuración de Visualización</h3>
+    
+    <!-- Selector de Tema -->
+    <div class="setting-group">
+        <label for="themeSelect">Tema de la página:</label>
+        <select id="themeSelect">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+        </select>
+    </div>
+    
+    <!-- Control deslizante para Tamaño de Fuente -->
+    <div class="setting-group">
+        <label for="fontSizeSlider">Tamaño de fuente:</label>
+        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+        <span id="fontSizeValue">16px</span>
+    </div>
+    
+     <div class="settings-actions">
+            <button id="applySettings" class="nav-button primary">Aplicar</button>
+            <button id="closeSettings" class="nav-button secondary">Cerrar</button>
+        </div>
+
+    <script src="js/quiz.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

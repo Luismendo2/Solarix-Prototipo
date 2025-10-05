@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Introducción a la Energía Solar - Solarix</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú Hamburguesa -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Solarix</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="modulos.html" class="nav-link">Módulos</a>
+                <a href="#" class="nav-link">Simuladores</a>
+                <a href="cuestionario.html" class="nav-link">Evaluación</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado del Módulo -->
+    <section class="module-header">
+        <div class="container">
+            <a href="modulos.html" class="back-button">← Volver a Módulos</a>
+            <h2>Módulo 1: Introducción a la Energía Solar</h2>
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del Módulo -->
+    <section class="module-content">
+        <div class="container">
+            <!-- Sección 1: ¿Qué es la energía solar? -->
+            <div class="content-section">
+                <h3>¿Qué es la energía solar y cómo funciona?</h3>
+                <p>La energía solar es una fuente renovable que aprovecha la radiación del sol para generar electricidad o calor. Es un proceso limpio, sin emisiones contaminantes, con sistemas duraderos y de bajo mantenimiento.</p>
+                
+                <div class="media-container">
+                    <!-- Espacio para video -->
+                    <div class="video-placeholder">
+                        <p>Video explicativo sobre energía solar</p>
+                    </div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>En el hogar</h4>
+                        <p>Se utiliza para alimentar electrodomésticos, sistemas de iluminación y calentamiento de agua, permitiendo ahorro en las facturas eléctricas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>En la industria</h4>
+                        <p>Procesos térmicos, maquinaria o iluminación, reduciendo costos operativos y huella de carbono.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>En el transporte</h4>
+                        <p>Vehículos eléctricos, bicicletas y puntos de carga, ofreciendo movilidad con energía limpia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 2: Usos prácticos -->
+            <div class="content-section">
+                <h3>Usos prácticos y sorprendentes de la energía solar</h3>
+                
+                <div class="media-container">
+                    <!-- Espacio para infografía -->
+                    <div class="infographic-placeholder">
+                        <p>Infografía sobre usos de la energía solar</p>
+                    </div>
+                </div>
+                
+                <div class="usage-list">
+                    <div class="usage-item">
+                        <h4>En espacios públicos</h4>
+                        <p>Puntos de carga automatizada, bombas solares y sensores que operan con energía solar.</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>En zonas rurales</h4>
+                        <p>Dispositivos que utilizan paneles solares como fuente principal para llevar energía a comunidades aisladas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección 3: Importancia -->
+            <div class="content-section">
+                <h3>¿Por qué deberías interesarte?</h3>
+                <p>La energía solar es clave en la transición hacia un modelo energético más sostenible:</p>
+                
+                <ul class="importance-list">
+                    <li>Disponibilidad constante mientras haya sol</li>
+                    <li>Reduce la dependencia de combustibles fósiles</li>
+                    <li>Disminuye emisiones de gases contaminantes y combate el cambio climático</li>
+                    <li>Promueve la autosuficiencia energética</li>
+                </ul>
+                
+                <div class="media-container">
+                    <!-- Espacio para modelo 3D -->
+                    <div class="model3d-placeholder">
+                        <p>Modelo 3D interactivo de panel solar</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegación entre secciones -->
+            <div class="navigation-buttons">
+                <a href="modulos.html" class="nav-button secondary">Volver</a>
+                <a href="modulo2.html" class="nav-button primary">Siguiente Módulo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Solarix - Sistema Multimedia para la Educación sobre Energía Solar en la UAO</p>
+            <p>Proyecto desarrollado por el equipo de Diseño Multimedia 2</p>
+        </div>
+    </footer>
+    <!-- Icono para activar configuraciones -->
+<button id="settingsToggle" class="settings-toggle">⚙️</button>
+
+<!-- Panel de Configuraciones -->
+<div id="settingsPanel" class="settings-panel">
+    <h3>Configuración de Visualización</h3>
+    
+    <!-- Selector de Tema -->
+    <div class="setting-group">
+        <label for="themeSelect">Tema de la página:</label>
+        <select id="themeSelect">
+            <option value="light">Claro</option>
+            <option value="dark">Oscuro</option>
+        </select>
+    </div>
+    
+    <!-- Control deslizante para Tamaño de Fuente -->
+    <div class="setting-group">
+        <label for="fontSizeSlider">Tamaño de fuente:</label>
+        <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+        <span id="fontSizeValue">16px</span>
+    </div>
+    
+     <div class="settings-actions">
+            <button id="applySettings" class="nav-button primary">Aplicar</button>
+            <button id="closeSettings" class="nav-button secondary">Cerrar</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
