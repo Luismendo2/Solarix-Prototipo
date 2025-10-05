@@ -250,14 +250,16 @@
         </div>
     </section>
 
-    <!-- Modal de Resultados -->
-    <div class="modal" id="resultsModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Resultados del Cuestionario</h2>
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body">
+   <!-- Modal de Resultados - VERSIÓN MEJORADA CON REVISIÓN -->
+<div class="modal" id="resultsModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Resultados del Cuestionario</h2>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <!-- Vista de Resultados Generales -->
+            <div id="resultsView">
                 <div class="score-container">
                     <div class="score-circle">
                         <span id="finalScore">0</span>
@@ -272,13 +274,40 @@
                         <!-- Se llenará dinámicamente con JavaScript -->
                     </div>
                 </div>
-                <div class="results-actions">
-    <button class="nav-button secondary" onclick="reviewAnswers()">Revisar Respuestas</button>
-    <button class="nav-button primary" onclick="retakeQuiz()">Realizar Otro Intento</button>
+               <div class="results-actions">
+    <button class="nav-button secondary" onclick="showReviewMode()">Revisar Respuestas</button>
+    <button class="nav-button primary" onclick="retakeQuiz()">Realizar Otro Intento</button> <!-- ✅ CORREGIDO -->
+</div>
+
+
+            </div>
+
+            <!-- Vista de Revisión de Respuestas -->
+            <div id="reviewView" style="display: none;">
+                <h3>Revisión de Respuestas</h3>
+                
+                <!-- Navegación de Revisión -->
+                <div class="review-navigation">
+                    <button id="prevReview" class="nav-button secondary" onclick="previousReviewQuestion()">← Anterior</button>
+                    <span class="review-counter">
+                        Pregunta <span id="currentReviewQuestion">1</span> de <span id="totalReviewQuestions">5</span>
+                    </span>
+                    <button id="nextReview" class="nav-button primary" onclick="nextReviewQuestion()">Siguiente →</button>
+                </div>
+
+                <!-- Contenedor de Pregunta en Revisión -->
+                <div class="review-question-container" id="reviewQuestionContainer">
+                    <!-- Se llenará dinámicamente con JavaScript -->
+                </div>
+
+               <div class="review-actions">
+    <button class="nav-button secondary" onclick="showResultsView()">Volver a Resultados</button>
+    <button class="nav-button primary" onclick="retakeQuiz()">Realizar Otro Intento</button> <!-- ✅ CORREGIDO -->
 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
