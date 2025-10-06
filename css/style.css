@@ -818,3 +818,301 @@ p, span, li, td, th {
     border-color: var(--color-primary);
     background-color: rgba(133, 240, 240, 0.1);
 }
+/* ===== AJUSTES DE CONTRASTE PARA MODO OSCURO ===== */
+
+[data-theme="dark"] .module-header,
+[data-theme="dark"] .modules-header,
+[data-theme="dark"] .hero {
+    /* Mejorar contraste en encabezados con fondo azul */
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%) !important;
+}
+
+[data-theme="dark"] .module-header h2,
+[data-theme="dark"] .modules-header h2,
+[data-theme="dark"] .module-header p,
+[data-theme="dark"] .modules-header p,
+[data-theme="dark"] .hero-content h2,
+[data-theme="dark"] .hero-content p {
+    /* Texto blanco para máximo contraste en fondos oscuros */
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .back-button {
+    /* Mejorar contraste en botón volver */
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .progress-bar {
+    /* Mejorar visibilidad de la barra de progreso */
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .progress {
+    /* Color más vibrante para el progreso */
+    background-color: var(--color-accent) !important;
+}
+
+/* Ajustes específicos para tarjetas y contenedores */
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .module-card,
+[data-theme="dark"] .question-card,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .actor-card,
+[data-theme="dark"] .project-card {
+    /* Mejorar contraste en tarjetas */
+    background-color: var(--color-surface) !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .feature-card h3,
+[data-theme="dark"] .module-card h3,
+[data-theme="dark"] .question-card h3,
+[data-theme="dark"] .content-section h3 {
+    /* Mejorar contraste en títulos de tarjetas */
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .feature-card p,
+[data-theme="dark"] .module-card p,
+[data-theme="dark"] .question-card p {
+    /* Mejorar contraste en texto de tarjetas */
+    color: var(--color-text) !important;
+    opacity: 0.9;
+}
+
+/* Ajustes para botones */
+[data-theme="dark"] .cta-button,
+[data-theme="dark"] .module-button,
+[data-theme="dark"] .nav-button.primary,
+[data-theme="dark"] .submit-btn {
+    /* Botones más vibrantes en modo oscuro */
+    background-color: var(--color-accent) !important;
+    color: var(--color-dark) !important;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .nav-button.secondary {
+    /* Botones secundarios con mejor contraste */
+    background-color: transparent !important;
+    color: var(--color-accent) !important;
+    border: 2px solid var(--color-accent) !important;
+}
+
+[data-theme="dark"] .nav-button.secondary:hover {
+    background-color: var(--color-accent) !important;
+    color: var(--color-dark) !important;
+}
+
+/* Ajustes para el menú de navegación */
+[data-theme="dark"] .navbar {
+    background-color: var(--color-surface) !important;
+    border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .nav-link.active {
+    color: var(--color-accent) !important;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* Ajustes para secciones de contenido */
+[data-theme="dark"] .content-section h3 {
+    color: var(--color-accent) !important;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .content-section p {
+    color: var(--color-text) !important;
+    opacity: 0.9;
+}
+
+/* Ajustes para listas */
+[data-theme="dark"] .importance-list li,
+[data-theme="dark"] .project-list li,
+[data-theme="dark"] .usage-list li {
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .importance-list li::before {
+    color: var(--color-accent) !important;
+}
+
+/* Ajustes para tablas */
+[data-theme="dark"] .comparison-table th,
+[data-theme="dark"] .troubleshooting-table th {
+    background-color: var(--color-dark) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .comparison-table td,
+[data-theme="dark"] .troubleshooting-table td {
+    background-color: var(--color-surface) !important;
+    color: var(--color-text) !important;
+    border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .comparison-table tr:hover,
+[data-theme="dark"] .troubleshooting-table tr:hover {
+    background-color: rgba(133, 240, 240, 0.1) !important;
+}
+
+/* Ajustes para opciones de preguntas */
+[data-theme="dark"] .option {
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .option:hover {
+    border-color: var(--color-accent) !important;
+    background-color: rgba(133, 240, 240, 0.1) !important;
+}
+
+[data-theme="dark"] .option-text {
+    color: var(--color-text) !important;
+}
+
+/* Ajustes para retroalimentación */
+[data-theme="dark"] .feedback-correct {
+    background-color: rgba(76, 175, 80, 0.2) !important;
+    border-left-color: #4CAF50 !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .feedback-incorrect {
+    background-color: rgba(244, 67, 54, 0.2) !important;
+    border-left-color: #F44336 !important;
+    color: var(--color-text) !important;
+}
+
+/* Ajustes para el panel de configuraciones */
+[data-theme="dark"] .settings-panel {
+    background-color: var(--color-surface) !important;
+    border: 2px solid var(--color-accent) !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .settings-panel h3 {
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .setting-group label {
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .setting-group select,
+[data-theme="dark"] .setting-group input {
+    background-color: var(--color-surface) !important;
+    color: var(--color-text) !important;
+    border: 2px solid var(--color-border) !important;
+}
+
+[data-theme="dark"] #fontSizeValue {
+    color: var(--color-accent) !important;
+}
+
+/* Ajustes para placeholders de medios */
+[data-theme="dark"] .video-placeholder,
+[data-theme="dark"] .infographic-placeholder,
+[data-theme="dark"] .model3d-placeholder,
+[data-theme="dark"] .map-placeholder,
+[data-theme="dark"] .regional-infographic,
+[data-theme="dark"] .calculator-placeholder {
+    background-color: var(--color-dark) !important;
+    color: var(--color-accent) !important;
+    border: 2px dashed var(--color-accent);
+}
+
+/* Ajustes para el footer */
+[data-theme="dark"] .footer {
+    background-color: var(--color-dark) !important;
+    color: #ffffff !important;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Ajustes específicos para el cuestionario */
+[data-theme="dark"] .quiz-info .info-label {
+    color: var(--color-text) !important;
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .quiz-info .info-value {
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .progress-text {
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .question-header h3 {
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .question-type {
+    background-color: var(--color-dark) !important;
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .question-content p {
+    color: var(--color-text) !important;
+    font-weight: 500;
+}
+
+/* Ajustes para la revisión de respuestas en modo oscuro */
+[data-theme="dark"] .review-navigation {
+    background-color: var(--color-dark) !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .review-counter {
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .review-question-container {
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-accent) !important;
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .review-question h4 {
+    color: var(--color-accent) !important;
+}
+
+[data-theme="dark"] .answer-correct {
+    background-color: rgba(76, 175, 80, 0.15) !important;
+    border-left-color: #4CAF50 !important;
+}
+
+[data-theme="dark"] .answer-incorrect {
+    background-color: rgba(244, 67, 54, 0.15) !important;
+    border-left-color: #F44336 !important;
+}
+
+[data-theme="dark"] .review-explanation {
+    background-color: rgba(133, 240, 240, 0.1) !important;
+    border-left-color: var(--color-accent) !important;
+}
+
+/* Mejorar contraste en textos pequeños y detalles */
+[data-theme="dark"] .info-label,
+[data-theme="dark"] .frequency,
+[data-theme="dark"] .step-number {
+    color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .breakdown-status.status-correct {
+    background-color: rgba(76, 175, 80, 0.3) !important;
+    color: #a5d6a7 !important;
+}
+
+[data-theme="dark"] .breakdown-status.status-incorrect {
+    background-color: rgba(244, 67, 54, 0.3) !important;
+    color: #ef9a9a !important;
+}
