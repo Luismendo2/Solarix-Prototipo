@@ -27,7 +27,7 @@ function initializeMediaPlaceholders() {
     const placeholders = document.querySelectorAll('[class*="placeholder"], [class*="infographic"], [class*="model3d"]');
     placeholders.forEach(placeholder => {
         placeholder.addEventListener('click', function() {
-            alert('Este espacio está reservado para contenido multimedia. Una vez que tengas los recursos, podrás enlazarlos aquí.');
+            ;
         });
     });
 }

@@ -6,6 +6,7 @@
     <title>Módulo 1: Introducción a la Energía Solar - Solarix</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -50,9 +51,9 @@
                 <p>La energía solar es una fuente renovable que aprovecha la radiación del sol para generar electricidad o calor. Es un proceso limpio, sin emisiones contaminantes, con sistemas duraderos y de bajo mantenimiento.</p>
                 
                 <div class="media-container">
-                    <!-- Espacio para video -->
-                    <div class="video-placeholder">
-                        <p>Video explicativo sobre energía solar</p>
+                     <video controls>
+                        <source src="public/Videos/LaEnergíaSolar.mp4" type="video/mp4">
+                     </video>
                     </div>
                 </div>
                 
@@ -78,8 +79,8 @@
                 
                 <div class="media-container">
                     <!-- Espacio para infografía -->
-                    <div class="infographic-placeholder">
-                        <p>Infografía sobre usos de la energía solar</p>
+                    <div class="media-container">
+                        <img src="public/Imagenes/Usosolar.jpg" alt="Infografía sobre los usos de la energía solar" class="infographic">
                     </div>
                 </div>
                 
@@ -107,11 +108,15 @@
                     <li>Promueve la autosuficiencia energética</li>
                 </ul>
                 
-                <div class="media-container">
-                    <!-- Espacio para modelo 3D -->
-                    <div class="model3d-placeholder">
-                        <p>Modelo 3D interactivo de panel solar</p>
-                    </div>
+                <div class="media-container model3d-container">
+                <model-viewer
+                    src="public/Modelados/Solar_Panel.glb"
+                    alt="Modelo 3D interactivo de un panel solar"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    class="model3d">
+                </model-viewer>
                 </div>
             </div>
 

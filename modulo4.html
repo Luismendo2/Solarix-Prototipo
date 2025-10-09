@@ -6,6 +6,8 @@
     <title>Módulo 4: Energía Solar en Colombia - Solarix</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -50,9 +52,51 @@
                 <p>Desde 2014, Colombia ha crecido en implementación de energía solar, gracias a incentivos legales y mayor conciencia ambiental. Para 2023, se alcanzaron más de 350 MW instalados.</p>
                 
                 <div class="media-container">
-                    <!-- Espacio para mapa interactivo -->
-                    <div class="map-placeholder">
-                        <p>Mapa interactivo de proyectos solares en Colombia</p>
+                    <!-- Mapa interactivo de proyectos solares -->
+                    <div id="map-container">
+                        <div id="solar-map"></div>
+                        <div id="map-controls">
+                            <div class="filter-control">
+                                <label for="departamento-filter">Filtrar por departamento:</label>
+                                <select id="departamento-filter">
+                                    <option value="todos">Todos los departamentos</option>
+                                </select>
+                            </div>
+                            <div class="filter-control">
+                                <label for="estado-filter">Filtrar por estado:</label>
+                                <select id="estado-filter">
+                                    <option value="todos">Todos los estados</option>
+                                    <option value="OPERACIÓN">En operación</option>
+                                    <option value="PRUEBAS">En pruebas</option>
+                                    <option value="EN TRAMITE">En trámite</option>
+                                </select>
+                            </div>
+                            <div class="filter-control">
+                                <label for="capacidad-filter">Filtrar por capacidad:</label>
+                                <select id="capacidad-filter">
+                                    <option value="todos">Todas las capacidades</option>
+                                    <option value="0-1">0-1 MW</option>
+                                    <option value="1-10">1-10 MW</option>
+                                    <option value="10-50">10-50 MW</option>
+                                    <option value="50+">Más de 50 MW</option>
+                                </select>
+                            </div>
+                            <button id="reset-filters" class="nav-button secondary">Restablecer filtros</button>
+                        </div>
+                        <div id="map-stats">
+                            <div class="stat-card">
+                                <h4>Total de Proyectos</h4>
+                                <span id="total-projects">0</span>
+                            </div>
+                            <div class="stat-card">
+                                <h4>Capacidad Total (MW)</h4>
+                                <span id="total-capacity">0</span>
+                            </div>
+                            <div class="stat-card">
+                                <h4>En Operación</h4>
+                                <span id="operating-projects">0</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,10 +154,9 @@
                 </ul>
                 
                 <div class="media-container">
-                    <!-- Espacio para infografía regional -->
-                    <div class="regional-infographic">
-                        <p>Infografía sobre energía solar en el Valle del Cauca</p>
-                    </div>
+                    <img src="public/Imagenes/Valle.jpg" 
+                        alt="Infografía de medidas de seguridad en instalaciones solares" 
+                        class="infographic">
                 </div>
             </div>
 
@@ -180,6 +223,8 @@
             <button id="closeSettings" class="nav-button secondary">Cerrar</button>
         </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="js/mapa-solar.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
