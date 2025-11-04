@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuladores - Solarix</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú Hamburguesa -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Solarix</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="modulos.html" class="nav-link">Módulos</a>
+                <a href="simuladores.html" class="nav-link active">Simuladores</a>
+                <a href="cuestionario.html" class="nav-link">Evaluación</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de Simuladores -->
+    <section class="module-header">
+        <div class="container">
+            <a href="index.html" class="back-button">← Volver al Inicio</a>
+            <h2>Simuladores Interactivos</h2>
+            <p>Experimenta con diferentes escenarios y calcula el potencial de energía solar</p>
+        </div>
+    </section>
+
+    <!-- Contenido de Simuladores -->
+    <section class="module-content">
+        <div class="container">
+            <!-- Navegación entre simuladores -->
+            <div class="simulators-nav">
+                <button class="simulator-tab active" onclick="showSimulator('ahorro')">Simulador de Ahorro Mensual</button>
+                <button class="simulator-tab" onclick="showSimulator('consumo')">Simulador de Consumo Doméstico</button>
+            </div>
+
+            <!-- Simulador de Ahorro Mensual (HU1.1.1) -->
+            <div id="simulator-ahorro" class="simulator-container active">
+                <div class="simulator-header">
+                    <h3>Simulador de Ahorro Mensual</h3>
+                    <p>Calcula tu potencial de ahorro energético con paneles solares</p>
+                </div>
+                
+                <div class="simulator-content">
+                    <div class="input-section">
+                        <h4>Configuración del Sistema</h4>
+                        
+                        <div class="input-group">
+                            <label for="tipo-panel">Tipo de Panel Solar:</label>
+                            <select id="tipo-panel">
+                                <option value="monocristalino">Monocristalino (alta eficiencia)</option>
+                                <option value="policristalino">Policristalino (media eficiencia)</option>
+                                <option value="pelicula-delgada">Película delgada (baja eficiencia)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="cantidad-paneles">Cantidad de Paneles:</label>
+                            <input type="number" id="cantidad-paneles" min="1" max="50" value="10">
+                            <span class="input-hint">Máximo 50 paneles</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="consumo-mensual">Consumo Eléctrico Mensual (kWh):</label>
+                            <input type="number" id="consumo-mensual" min="100" max="5000" value="500">
+                            <span class="input-hint">Promedio hogar colombiano: 300-600 kWh</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="ubicacion">Ubicación en Colombia:</label>
+                            <select id="ubicacion">
+                                <option value="caribe">Región Caribe (Alta radiación)</option>
+                                <option value="andina">Región Andina (Media radiación)</option>
+                                <option value="pacifico">Región Pacífica (Baja radiación)</option>
+                                <option value="orinoquia">Región Orinoquía (Alta radiación)</option>
+                                <option value="amazonia">Región Amazonía (Media radiación)</option>
+                            </select>
+                        </div>
+
+                        <button class="calculate-btn" onclick="calcularAhorro()">Calcular Ahorro</button>
+                    </div>
+
+                    <div class="results-section" id="results-ahorro" style="display: none;">
+                        <h4>Resultados del Simulación</h4>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <h5>Generación Mensual Estimada</h5>
+                                <div class="result-value" id="generacion-mensual">-</div>
+                                <span class="result-unit">kWh/mes</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Ahorro Mensual Estimado</h5>
+                                <div class="result-value" id="ahorro-mensual">-</div>
+                                <span class="result-unit">COP/mes</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Reducción de CO₂</h5>
+                                <div class="result-value" id="reduccion-co2">-</div>
+                                <span class="result-unit">kg/mes</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Porcentaje de Autosuficiencia</h5>
+                                <div class="result-value" id="autosuficiencia">-</div>
+                                <span class="result-unit">%</span>
+                            </div>
+                        </div>
+
+                        <div class="comparison-section">
+                            <h5>Comparación con Maqueta Física</h5>
+                            <p>Los resultados teóricos pueden contrastarse con las mediciones reales de nuestra maqueta física en el campus UAO.</p>
+                            <div class="maqueta-info">
+                                <span class="maqueta-status" id="maqueta-status">🔍 Consultar en laboratorio</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="nav-button secondary" onclick="resetSimulator('ahorro')">Nueva Simulación</button>
+                            <button class="nav-button primary" onclick="descargarReporte()">Descargar Reporte</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulador de Consumo Doméstico (HU1.1.4) -->
+            <div id="simulator-consumo" class="simulator-container">
+                <div class="simulator-header">
+                    <h3>Simulador de Consumo Doméstico</h3>
+                    <p>Calcula cuántos paneles solares necesitas según tu consumo eléctrico</p>
+                </div>
+                
+                <div class="simulator-content">
+                    <div class="input-section">
+                        <h4>Selecciona tus Electrodomésticos</h4>
+                        
+                        <div class="appliances-grid" id="electrodomesticos-container">
+                            <!-- Los electrodomésticos se generarán dinámicamente -->
+                        </div>
+
+                        <div class="consumo-total">
+                            <h5>Consumo Total Estimado:</h5>
+                            <div class="total-value">
+                                <span id="consumo-total">0</span> kWh/mes
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="tipo-panel-consumo">Tipo de Panel Solar:</label>
+                            <select id="tipo-panel-consumo">
+                                <option value="monocristalino">Monocristalino (330W)</option>
+                                <option value="policristalino">Policristalino (300W)</option>
+                                <option value="pelicula-delgada">Película delgada (250W)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="horas-sol">Horas de Sol Pico Diarias:</label>
+                            <input type="number" id="horas-sol" min="3" max="8" step="0.5" value="5">
+                            <span class="input-hint">Promedio Colombia: 4-6 horas</span>
+                        </div>
+
+                        <button class="calculate-btn" onclick="calcularPanelesNecesarios()">Calcular Paneles Necesarios</button>
+                    </div>
+
+                    <div class="results-section" id="results-consumo" style="display: none;">
+                        <h4>Resultados del Cálculo</h4>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <h5>Paneles Solares Necesarios</h5>
+                                <div class="result-value" id="paneles-necesarios">-</div>
+                                <span class="result-unit">paneles</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Potencia del Sistema</h5>
+                                <div class="result-value" id="potencia-sistema">-</div>
+                                <span class="result-unit">kWp</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Área Requerida</h5>
+                                <div class="result-value" id="area-requerida">-</div>
+                                <span class="result-unit">m²</span>
+                            </div>
+                            <div class="result-card">
+                                <h5>Inversión Aproximada</h5>
+                                <div class="result-value" id="inversion-aprox">-</div>
+                                <span class="result-unit">COP</span>
+                            </div>
+                        </div>
+
+                        <div class="recomendaciones-section">
+                            <h5>Recomendaciones</h5>
+                            <div id="recomendaciones-list">
+                                <!-- Recomendaciones dinámicas -->
+                            </div>
+                        </div>
+
+                        <div class="comparison-section">
+                            <h5>Validación con Maqueta Física</h5>
+                            <p>Este cálculo puede verificarse experimentalmente con nuestro prototipo físico en el laboratorio UAO.</p>
+                            <div class="maqueta-info">
+                                <span class="maqueta-status" id="maqueta-status-consumo">🔍 Comparar con mediciones reales</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="nav-button secondary" onclick="resetSimulator('consumo')">Nueva Simulación</button>
+                            <button class="nav-button primary" onclick="generarPresupuesto()">Generar Presupuesto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Solarix - Sistema Multimedia para la Educación sobre Energía Solar en la UAO</p>
+            <p>Proyecto desarrollado por el equipo de Diseño Multimedia 2</p>
+        </div>
+    </footer>
+
+    <!-- Icono para activar configuraciones -->
+    <button id="settingsToggle" class="settings-toggle">⚙️</button>
+
+    <!-- Panel de Configuraciones -->
+    <div id="settingsPanel" class="settings-panel">
+        <h3>Configuración de Visualización</h3>
+        
+        <!-- Selector de Tema -->
+        <div class="setting-group">
+            <label for="themeSelect">Tema de la página:</label>
+            <select id="themeSelect">
+                <option value="light">Claro</option>
+                <option value="dark">Oscuro</option>
+            </select>
+        </div>
+        
+        <!-- Control deslizante para Tamaño de Fuente -->
+        <div class="setting-group">
+            <label for="fontSizeSlider">Tamaño de fuente:</label>
+            <input type="range" id="fontSizeSlider" min="12" max="24" value="16" step="1">
+            <span id="fontSizeValue">16px</span>
+        </div>
+        
+        <div class="settings-actions">
+            <button id="applySettings" class="nav-button primary">Aplicar</button>
+            <button id="closeSettings" class="nav-button secondary">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="./public/js/simuladores.js"></script>
+    <script src="./public/js/script.js"></script>
+</body>
+</html>
